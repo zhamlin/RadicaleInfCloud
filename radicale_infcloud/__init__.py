@@ -20,7 +20,7 @@ import posixpath
 import time
 
 from http import client
-from radicale import storage, web
+from radicale import storage, web, pathutils
 
 from radicale.httputils import NOT_FOUND
 
