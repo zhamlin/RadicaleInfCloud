@@ -83,7 +83,7 @@ class Web(web.BaseWeb):
 
     def get(self, environ, base_prefix, path, user):
         if not path.startswith("/.web/infcloud/") and path != "/.web/infcloud":
-            status, headers, answer = self().base_get(environ, base_prefix, path,
+            status, headers, answer = self.base_get(environ, base_prefix, path,
                                                   user)
             if status == client.OK and path in ("/.web/", "/.web/index.html"):
                 answer = answer.replace(b"""\
