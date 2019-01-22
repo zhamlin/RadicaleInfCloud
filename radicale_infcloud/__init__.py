@@ -49,6 +49,8 @@ class Web(web.BaseWeb):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.infcloud_folder = pkg_resources.resource_filename(__name__, "web")
+        self.folder = pkg_resources.resource_filename(__name__,
+"internal_data")
 
     def base_get(self, environ, base_prefix, path, user):
         assert path == "/.web" or path.startswith("/.web/")
