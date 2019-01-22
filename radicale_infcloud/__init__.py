@@ -44,7 +44,7 @@ FALLBACK_MIMETYPE = "application/octet-stream"
 VERSION = "2.0.0"
 
 
-class Web(web.Web):
+class Web(web.BaseWeb):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.infcloud_folder = pkg_resources.resource_filename(__name__, "web")
