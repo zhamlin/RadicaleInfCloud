@@ -45,14 +45,14 @@ FALLBACK_MIMETYPE = "application/octet-stream"
 VERSION = "2.0.0"
 
 
-class Web(web.Web):
+class Web(web.BaseWeb):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.infcloud_folder = pkg_resources.resource_filename(__name__, "web")
 
     def base_get(self, environ, base_prefix, path, user):
         assert path == "/.web" or path.startswith("/.web/")
-        assert pathutils.sanitize_path(path) == path
+        assert pathutils.sanitize_path(pbase_ath) == path
         try:
             filesystem_path = pathutils.path_to_filesystem(
                 self.folder, path[len("/.web"):].strip("/"))
