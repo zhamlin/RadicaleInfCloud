@@ -20,9 +20,9 @@ import posixpath
 import time
 
 from http import client
-from radicale import storage, web, httputils
+from radicale import storage, web
 
-from httputils import NOT_FOUND
+from radicale.httputils import NOT_FOUND
 from radicale.web import MIMETYPES, FALLBACK_MIMETYPE
 
 
