@@ -52,7 +52,7 @@ class Web(web.BaseWeb):
 
     def base_get(self, environ, base_prefix, path, user):
         assert path == "/.web" or path.startswith("/.web/")
-        assert pathutils.sanitize_path(pbase_ath) == path
+        assert pathutils.sanitize_path(path) == path
         try:
             filesystem_path = pathutils.path_to_filesystem(
                 self.folder, path[len("/.web"):].strip("/"))
