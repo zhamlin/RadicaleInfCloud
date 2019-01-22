@@ -61,7 +61,7 @@ class Web(web.BaseWeb):
         except ValueError as e:
             logger.debug("Web content with unsafe path %r requested: %s",
                          path, e, exc_info=True)
-            return httputils.NOT_FOUND
+            return NOT_FOUND
         if os.path.isdir(filesystem_path) and not path.endswith("/"):
             location = posixpath.basename(path) + "/"
             return (client.FOUND,
@@ -70,7 +70,7 @@ class Web(web.BaseWeb):
         if os.path.isdir(filesystem_path):
             filesystem_path = os.path.join(filesystem_path, "index.html")
         if not os.path.isfile(filesystem_path):
-            return httputils.NOT_FOUND
+            return NOT_FOUND
         content_type = MIMETYPES.get(
             os.path.splitext(filesystem_path)[1].lower(), FALLBACK_MIMETYPE)
         with open(filesystem_path, "rb") as f:
