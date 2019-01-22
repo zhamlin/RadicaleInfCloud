@@ -23,7 +23,22 @@ from http import client
 from radicale import storage, web
 
 from radicale.httputils import NOT_FOUND
-from radicale.web import MIMETYPES, FALLBACK_MIMETYPE
+# from radicale.web import MIMETYPES, FALLBACK_MIMETYPE
+MIMETYPES = {
+    ".css": "text/css",
+    ".eot": "application/vnd.ms-fontobject",
+    ".gif": "image/gif",
+    ".html": "text/html",
+    ".js": "application/javascript",
+    ".manifest": "text/cache-manifest",
+    ".png": "image/png",
+    ".svg": "image/svg+xml",
+    ".ttf": "application/font-sfnt",
+    ".txt": "text/plain",
+    ".woff": "application/font-woff",
+    ".woff2": "font/woff2",
+    ".xml": "text/xml"}
+FALLBACK_MIMETYPE = "application/octet-stream"
 
 
 VERSION = "2.0.0"
